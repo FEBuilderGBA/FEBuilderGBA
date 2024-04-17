@@ -1158,7 +1158,7 @@ namespace FEBuilderGBA
                 return;
             }
             uint iconBaseAddress = Program.ROM.p32(iconP);
-            ExportFunction.One(sb, "SkillIcons", iconBaseAddress, isColorzCore);
+            ExportFunction.One(sb, "SkillIcons", iconBaseAddress);
         }
 
         private void ExportAllButton_Click(object sender, EventArgs e)

@@ -2,10 +2,19 @@ PUSH
 //ORG 0xd1b44 //{J}
 ORG 0xCCE3C	//{U}
 jumpToHack(PromotionTextAlt)
+
+//CC 3分岐だけは別ルーチンらしい
+//ORG 0xD1BEC	//{J}
+ORG 0xCCEE4	//{U}
+jumpToHack(PromotionTextAltCC3)
 POP
 
 PromotionTextAlt:
 #incbin "PromotionTextAlt.dmp"
+POIN PromotionTextAlt_Table
+
+PromotionTextAltCC3:
+#incbin "PromotionTextAltCC3.dmp"
 POIN PromotionTextAlt_Table
 
 PromotionTextAlt_Table:

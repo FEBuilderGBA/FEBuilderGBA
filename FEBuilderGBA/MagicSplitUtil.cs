@@ -274,8 +274,8 @@ namespace FEBuilderGBA
             if (g_Cache_magic_split_enum == magic_split_enum.FE7UMAGIC
                 || g_Cache_magic_split_enum == magic_split_enum.FE8UMAGIC)
             {
-                sb.AppendLine("#define MagCharTable " + U.toOffset(UnitTag) );
-                sb.AppendLine("#define MagClassTable " + U.toOffset(ClassTag));
+                EAUtil.AddORG(sb, UnitTag, "MagCharTable");
+                EAUtil.AddORG(sb, ClassTag, "MagClassTable");
             }
         }
         static public uint GetUnitTag()

@@ -638,6 +638,7 @@ namespace FEBuilderGBA
                 }
             }
 
+            sb.AppendLine("PUSH");
             sb.AppendLine("#define ItemImage "
                 + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer)));
             sb.AppendLine("#define ItemPalette "
@@ -673,21 +674,11 @@ namespace FEBuilderGBA
                 sb.AppendLine("#define FEBUILDER_DATA_ORG " + U.To0xHexString(org_data));
             }
 
-            Program.ExportFunction.ExportEA(sb, isColorzCore);
-
+            Program.ExportFunction.ExportEA(sb);
             PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
             if (skillsystem == PatchUtil.skill_system_enum.SkillSystem)
             {
-                if (sb.ToString().IndexOf("SkillTester") >= 0)
-                {
-                    sb.AppendLine("#define SKILLSYSTEM_SKILL_TESTER SkillTester");
-                }
-                PatchUtil.ICONReworkENUN iconrework = PatchUtil.ICONRework();
-                if (iconrework == PatchUtil.ICONReworkENUN.SkillSystemsIconRework)
-                {
-                    sb.AppendLine("#define HAX_ICON_REWORK");
-                }
-
+                AddSkillSystemFunc(sb);
             }
             //魔法分離パッチ
             MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
@@ -705,6 +696,7 @@ namespace FEBuilderGBA
                 sb.AppendLine("#define USE_STRMAG_SPLIT");
                 MagicSplitUtil.MakeEADefine(sb);
             }
+            sb.AppendLine("POP");
 
 
             if (freearea == 0 || freearea == U.NOT_FOUND)
@@ -732,6 +724,46 @@ namespace FEBuilderGBA
                 return 0;
             }
             return U.atoi(orignalIine.Substring(add_pos + 4));
+        }
+        public static void AddORG(StringBuilder sb, uint addr, string name)
+        {
+            if (addr == 0 || addr == U.NOT_FOUND)
+            {
+                return;
+            }
+            sb.AppendLine("ORG " + U.To0xHexString(U.toOffset(addr)) + " ;" + name + ":");
+        }
+        public static void AddORGWithMAP(StringBuilder sb, AsmMapFile map, string name)
+        {
+            uint addr = map.SearchName(name);
+            AddORG(sb, addr, name);
+        }
+
+        static void AddSkillSystemFunc(StringBuilder sb)
+        {
+            if (sb.ToString().IndexOf("SkillTester") >= 0)
+            {
+                sb.AppendLine("#define SKILLSYSTEM_SKILL_TESTER SkillTester");
+            }
+            PatchUtil.ICONReworkENUN iconrework = PatchUtil.ICONRework();
+            if (iconrework == PatchUtil.ICONReworkENUN.SkillSystemsIconRework)
+            {
+                sb.AppendLine("#define HAX_ICON_REWORK");
+            }
+
+            AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
+            AddORGWithMAP(sb, map, "prConGetter");
+            AddORGWithMAP(sb, map, "prAidGetter");
+            AddORGWithMAP(sb, map, "prMovGetter");
+            AddORGWithMAP(sb, map, "prMagGetter");
+            AddORGWithMAP(sb, map, "Get_Hp_Growth");
+            AddORGWithMAP(sb, map, "Get_Str_Growth");
+            AddORGWithMAP(sb, map, "Get_Mag_Growth");
+            AddORGWithMAP(sb, map, "Get_Skl_Growth");
+            AddORGWithMAP(sb, map, "Get_Spd_Growth");
+            AddORGWithMAP(sb, map, "Get_Luk_Growth");
+            AddORGWithMAP(sb, map, "Get_Def_Growth");
+            AddORGWithMAP(sb, map, "Get_Res_Growth");
         }
     }
 }
