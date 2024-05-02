@@ -14,3 +14,6 @@ INFO=指定したユニットを救出できなくします。
 
 AUTHOR=Pikmin1211 https://feuniverse.us/t/pikmin-asm/8148/5
 INFO.en=Allows for the prevention of both rescuing and being rescued (separately) by unit id. Also removes phantom rescuing hardcoding.
+
+NAME.zh=使其无法救援（安装程序）。
+INFO.zh=阻止指定单位被营救。

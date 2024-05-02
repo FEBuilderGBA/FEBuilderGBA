@@ -26,3 +26,6 @@ INFO=指定したユニットが救出されるのを禁止します。
 
 AUTHOR=Pikmin1211 https://feuniverse.us/t/pikmin-asm/8148/5
 INFO.en=Prohibits the specified unit from being rescued.\r\nAllows for the prevention of both rescuing and being rescued (separately) by unit id. Also removes phantom rescuing hardcoding.
+
+NAME.zh=RescueeTable（编辑器）防止救援。
+INFO.zh=阻止指定单位被营救。

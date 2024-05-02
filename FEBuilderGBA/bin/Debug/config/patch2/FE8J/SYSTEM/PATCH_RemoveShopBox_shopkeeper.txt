@@ -14,3 +14,4 @@ ONN:0x080B982C=0x00 0x00 0x00 0x00
 AUTHOR=SomeonePassingBy https://discord.com/channels/145137778710151168/145137778710151168/1234768036356034601
 INFO=このパッチはショップの店員の会話シーンの背後に表示される枠を取り除きます。
 INFO.en=This patch removes the frame that appears behind the conversation scene between the shopkeeper.
+INFO.zh=此补丁删除了店员谈话场景后面出现的框架。

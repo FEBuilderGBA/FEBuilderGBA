@@ -14,3 +14,4 @@ ONN:0x080BA39E=0x00 0x00 0x00 0x00
 AUTHOR=SomeonePassingBy https://discord.com/channels/145137778710151168/145137778710151168/1234768036356034601
 INFO=このパッチは闘技場の親父の会話シーンの背後に表示される枠を取り除きます。
 INFO.en=This patch removes the frame that appears behind the conversation scene between the arena man.
+INFO.zh=此补丁删除了竞技场中父亲对话场景后面出现的框架。

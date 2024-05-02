@@ -1,0 +1,17 @@
+NAME=トライアングルアタック時にFE7の残骸コードによりフリーズするバグの修正
+NAME.en=Fixed a bug that caused freeze due to FE7 wreckage code during Triangle Attack
+NAME.zh=Fixed a bug that caused freeze due to FE7 wreckage code during Triangle Attack
+TYPE=SWITCH
+
+COMBO=Default: Not Fix|OFF|Fix|ONN
+
+DETERMINATION_ADDRESS=0x57D1A
+
+OFF:0x08057D1A=0x04 0xD0
+
+ONN:0x08057D1A=0x04 0xE0
+
+AUTHOR=7743
+INFO=このパッチは、トライアングルアタック時にアニメーションが表示されずにフリーズしてしまうバグを修正します。\r\nFE7の個別アニメーションルーチンの残骸が悪さをしていてゲームがフリーズすることがあります。\r\nこのパッチはそのコードを無効にしてこの問題を解決します。
+INFO.en=This patch fixes a bug where the animation would freeze during a triangle attack.\r\nRemnants of FE7's individual animation routines can sometimes cause the game to freeze.\r\nThis patch disables that code and resolves this issue.
+INFO.zh=此补丁修复了三角形攻击期间动画会冻结的错误。\r\nFE7 的各个动画例程的残余有时会导致游戏冻结。\r\n此补丁禁用该代码并解决此问题。
