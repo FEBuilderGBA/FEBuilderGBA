@@ -1,0 +1,16 @@
+NAME=お店の店主の後ろにあるボックスを取り除く
+NAME.en=Remove box behind shopkeeper
+NAME.zh=Remove box behind shopkeeper
+TYPE=SWITCH
+
+COMBO=Default: Show Box|OFF|Remove Box|ONN
+
+DETERMINATION_ADDRESS=0xB4CA4
+
+OFF:0x080B4CA4=0x22 0xF0 0xFC 0xFB
+
+ONN:0x080B4CA4=0x00 0x00 0x00 0x00
+
+AUTHOR=SomeonePassingBy https://discord.com/channels/145137778710151168/145137778710151168/1234768036356034601
+INFO=このパッチはショップの店員の会話シーンの背後に表示される枠を取り除きます。
+INFO.en=This patch removes the frame that appears behind the conversation scene between the shopkeeper.
