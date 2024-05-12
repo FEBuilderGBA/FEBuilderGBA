@@ -711,6 +711,10 @@ namespace FEBuilderGBA
             else
             {
                 bmp = DrawMapChipOnly(plists.obj_plist, plists.palette_plist, null);
+                if (bmp == null)
+                {
+                    bmp = ImageUtil.Blank(32 * 8, 32 * 8);
+                }
             }
 
             byte[] data = ImageUtil.ImageToByte16Tile(bmp, bmp.Width, bmp.Height);
