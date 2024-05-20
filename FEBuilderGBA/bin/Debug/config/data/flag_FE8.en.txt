@@ -240,4 +240,4 @@ FF=Read:Detailed Battle Info
 012A=Global flag 012A
 012B=Global flag 012B
 012C=Global flag 012C
-FFFF=Reference Memory Slot
+FFFF=Reference Memory Slot 2
