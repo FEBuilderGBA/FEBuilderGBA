@@ -50,7 +50,15 @@ namespace FEBuilderGBA
         void BackListBox()
         {
             this.Hide();
+            //Application.DoEvents();
             this.TargetistBox.Focus();
+        }
+        void BackListBox(KeyEventArgs e)
+        {
+            e.Handled = true;  // 既定の処理を無効化
+            e.SuppressKeyPress = true;  // 入力処理を抑制
+
+            BackListBox();
         }
 
         private void EntryButton_Click(object sender, EventArgs e)
@@ -67,7 +75,7 @@ namespace FEBuilderGBA
                 {
                     this.TargetistBox.SelectedIndex -= 1;
                 }
-                BackListBox();
+                BackListBox(e);
                 return;
             }
             if (e.KeyCode == Keys.Down)
@@ -76,7 +84,7 @@ namespace FEBuilderGBA
                 {
                     this.TargetistBox.SelectedIndex += 1;
                 }
-                BackListBox();
+                BackListBox(e);
                 return;
             }
             if(    e.KeyCode == Keys.PageUp
@@ -85,14 +93,14 @@ namespace FEBuilderGBA
                 || e.KeyCode == Keys.Enter
                 )
             {
-                BackListBox();
+                BackListBox(e);
                 return;
             }
             if (e.KeyCode == Keys.Back)
             {
                 if (SearchWord.Text.Length <= 0)
                 {//何も入力されているものがない状態で、バックスペース押したら元に戻す.
-                    BackListBox();
+                    BackListBox(e);
                 }
                 return;
             }
@@ -133,6 +141,11 @@ namespace FEBuilderGBA
         }
         bool SearchFor(string search , int start,int end , bool noListFocus)
         {
+            if (search == "")
+            {
+                return false;
+            }
+
             if (U.isHexString(search))
             {//hexの場合は、先頭のコードだけを見て探索します.
                 uint searchhex = U.atoh(search);
