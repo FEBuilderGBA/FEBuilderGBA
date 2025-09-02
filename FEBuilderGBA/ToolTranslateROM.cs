@@ -154,12 +154,12 @@ namespace FEBuilderGBA
             stringbyte = U.ArrayAppend(stringbyte, new byte[] { 0x00 });
 
             string undoname = "CString:" + U.ToHexString(pointer);
-            InputFormRef.WriteBinaryDataPointer(null
-                , pointer
-                , stringbyte
-                , PatchUtil.get_data_pos_callback
-                , undodata
-            );
+            uint newaddr = this.Recycle.Write(stringbyte, undodata);
+            if (newaddr == U.NOT_FOUND)
+            {
+                return;
+            }
+            Program.ROM.write_p32( U.toOffset(pointer), newaddr, undodata);
         }
         void ApplyAntiHuffmanPatch()
         {
@@ -254,6 +254,7 @@ namespace FEBuilderGBA
             ToolTranslateROMWipeJPChapterName jpChapter = new ToolTranslateROMWipeJPChapterName(undodata);
             jpChapter.Wipe(list);
 
+            //Address.AddAddress(list, 0x1689450, 379328, U.NOT_FOUND, "",Address.DataTypeEnum.FFor00);//kaitou
             this.Recycle.AddRecycle(list);
             this.Recycle.RecycleOptimize();
         }
@@ -709,10 +710,10 @@ namespace FEBuilderGBA
             }
             
         }
-        public void ImportFont(Form self, string FontROMTextBox, bool FontAutoGenelateCheckBox, Font ttf, Undo.UndoData undodata)
+        public void ImportFont(Form self, string FontROMTextBox, string extrafontrom, bool FontAutoGenelateCheckBox, Font ttf, Undo.UndoData undodata)
         {
             ToolTranslateROMFont transFont = new ToolTranslateROMFont();
-            transFont.ImportFont(self, FontROMTextBox, FontAutoGenelateCheckBox, ttf, this.Recycle ,undodata);
+            transFont.ImportFont(self, FontROMTextBox, extrafontrom, FontAutoGenelateCheckBox, ttf, this.Recycle ,undodata);
         }
 
     }

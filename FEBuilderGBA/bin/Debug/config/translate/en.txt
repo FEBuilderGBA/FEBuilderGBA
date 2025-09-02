@@ -13120,6 +13120,9 @@ Unmodified FE7U
 :無改造 FE7J
 Unmodified FE7J
 
+:追加でフォントを取り出すROMがあれば指定してください。ないなら空白にして。
+If you have additional ROMs to extract fonts from, please specify them.If not, leave it blank.
+
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using a Japanese ROM and an English ROM.\r\n\r\nIn Simplified mode, translation is automatic.\r\nIt automatically adjusts the missing font import, menu length, etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
 
@@ -13161,6 +13164,9 @@ Overwrite All Text
 
 :すべてのテキストを、指定されたファイルの内容で書き換えます。\r\n利用するには、anti-HuffmanとDrawMultibye/DrawSingleByteパッチが必要です。\r\n処理が終わったら、別途、足りないフォントを取り込んでください。
 Rewrite the ROM's text with the contents of the specified file.\r\nThe anti-Huffman and DrawMultibye / DrawSingleByte patches must be applied for it to work.\r\nAny missing fonts must be imported after the text import is complete.
+
+:追加フォント ROM
+Additional font ROM.
 
 :履歴(上が最新)
 History (Descending Date)

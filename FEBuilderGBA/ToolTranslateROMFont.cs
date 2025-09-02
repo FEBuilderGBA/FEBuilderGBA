@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Security.Policy;
 
 namespace FEBuilderGBA
 {
@@ -18,10 +19,12 @@ namespace FEBuilderGBA
         PatchUtil.PRIORITY_CODE YourPriorityCode;
         Dictionary<string, bool> ProcessedFont;
         ROM YourROM;
+        PatchUtil.PRIORITY_CODE ExtraFontPriorityCode;
+        ROM ExtraFontROM;
         Undo.UndoData UndoData;
         RecycleAddress Recycle;
 
-        public void ImportFont(Form self, string FontROMTextBox, bool FontAutoGenelateCheckBox, Font ttf, RecycleAddress recycle, Undo.UndoData undodata)
+        public void ImportFont(Form self, string FontROMTextBox, string extrafontrom, bool FontAutoGenelateCheckBox, Font ttf, RecycleAddress recycle, Undo.UndoData undodata)
         {
             string filename = FontROMTextBox;
             this.YourROM = new ROM();
@@ -31,6 +34,18 @@ namespace FEBuilderGBA
             this.MyselfPriorityCode = PatchUtil.SearchPriorityCode();
 
             string version;
+
+            //追加フォントROM
+            this.ExtraFontROM = new ROM();
+            if (this.ExtraFontROM.Load(extrafontrom, out version))
+            {//フォントを取るようのROM
+                this.ExtraFontPriorityCode = PatchUtil.SearchPriorityCode(this.ExtraFontROM);
+            }
+            else
+            {
+                this.ExtraFontROM = null;
+            }
+
             if (this.YourROM.Load(filename, out version))
             {//フォントを取るようのROM
                 this.YourPriorityCode = PatchUtil.SearchPriorityCode(this.YourROM);
@@ -39,6 +54,8 @@ namespace FEBuilderGBA
             {
                 this.YourROM = null;
             }
+
+
 
             if (FontAutoGenelateCheckBox)
             {//自動生成する
@@ -185,6 +202,35 @@ namespace FEBuilderGBA
             }
         }
 
+        static byte[] GetFontFromROM(uint moji, bool isItemFont, ROM rom, PatchUtil.PRIORITY_CODE priorityCode)
+        {
+            if (rom == null)
+            {
+                return null;
+            }
+
+            //相手のROMにはあるかな？
+            uint topaddress_your;
+            uint fontaddress_your;
+            uint prevaddress_your;
+
+            topaddress_your = FontForm.GetFontPointer(isItemFont, rom);
+            fontaddress_your = FontForm.FindFontData(topaddress_your
+                , moji
+                , out prevaddress_your
+                , rom
+                , priorityCode);
+            if (fontaddress_your == U.NOT_FOUND)
+            {//相手のROMにもない
+                return null;
+            }
+            else
+            {
+                //fontデータの取得
+                return rom.getBinaryData(fontaddress_your, 8 * 64);
+            }
+        }
+
 
         void FontImporterOne(string one, bool isItemFont, bool isSquareFont)
         {
@@ -223,29 +269,22 @@ namespace FEBuilderGBA
                 }
 
                 //相手のROMにはあるかな？
-                uint topaddress_your;
-                uint fontaddress_your;
-                uint prevaddress_your;
-
-                topaddress_your = FontForm.GetFontPointer(isItemFont, this.YourROM);
-                fontaddress_your = FontForm.FindFontData(topaddress_your
-                    , moji
-                    , out prevaddress_your
-                    , this.YourROM
-                    , this.YourPriorityCode);
-                if (fontaddress_your == U.NOT_FOUND)
-                {//相手のROMにもない
-                    newFontData = null;
+                newFontData = GetFontFromROM(moji, isItemFont, this.YourROM, this.YourPriorityCode);
+                if (newFontData != null)
+                {
+                    Log.Notify("Font Porting", one);
+                    FontForm.TransportFontStruct(newFontData, moji, this.MyselfPriorityCode, this.YourPriorityCode);
                 }
                 else
                 {
-                    Log.Notify("Font Porting", one);
-
-                    //fontデータの取得
-                    newFontData = this.YourROM.getBinaryData(fontaddress_your, 8 * 64);
-
-                    FontForm.TransportFontStruct(newFontData ,moji , this.MyselfPriorityCode , this.YourPriorityCode );
+                    newFontData = GetFontFromROM(moji, isItemFont, this.ExtraFontROM, this.ExtraFontPriorityCode);
+                    if (newFontData != null)
+                    {
+                        Log.Notify("Font Porting", one);
+                        FontForm.TransportFontStruct(newFontData, moji, this.MyselfPriorityCode, this.ExtraFontPriorityCode);
+                    }
                 }
+
             }
 
             if (newFontData == null //存在しないフォントで

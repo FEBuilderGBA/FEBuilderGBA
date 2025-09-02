@@ -1,0 +1,12 @@
+NAME=英語翻訳時に長文を表示した後に、ステータス画面でRボタンを押すとクラッシュするバグの修正
+INFO=FE8Jの 0800A004 String_ExpandNames関数の問題を修正します。\r\nFE8Jはエスケープシーケンス以外は全部2バイトであるとしてプログラムされている。\r\nそのため、1バイトの文字を表示するパッチととても相性が悪い。\r\nまた作業メモリとしてテキストバッファの後半を再利用しているという変な構造になっていることも問題である。\r\n\r\nそのため、長文のテキスト会話を表示した後で、ステータス画面を開いて、Rボタンを押すと、フリーズしてします。\r\nこれは、上記特性からくるものです。\r\nリセットすればテキストバッファがnullクリアされて綺麗になるのでこの問題は起きなくなりますが、とても見苦しいので修正します。\r\n具体的には、String_ExpandNamesの冒頭で0x100バイト(256byte)ほど作業メモリをmemsetで0クリアします\r\nそのあとで、CopyStringでデータをコピーします。\r\nこれにより、FE8JのバグっているString_ExpandNamesでもちゃんと動作するようになります。\r\n翻訳で英訳するなどの1byte文字を出したい時に利用してください。
+
+TYPE=EA
+AUTHOR=7743
+
+EA=ClearAndCopy_installer.txt
+PATCHED_IF:0x0A014=0x00 0x4B 0x18 0x47
+NAME.en=Fixed a bug that caused the game to crash when pressing the R button on the status screen after displaying a long English translation.
+INFO.en=Fixes the 0800A004 String_ExpandNames function issue in FE8J.\r\nThe FE8J is programmed to assume that everything except escape sequences is 2 bytes.\r\nTherefore, it is not compatible with patches that display single-byte characters.\r\nAnother problem is the strange structure in which the latter half of the text buffer is reused as working memory.\r\n\r\nTherefore, after viewing a long text conversation, if you open the status screen and press the R button, the game will freeze.\r\nThis is due to the above characteristics.\r\nResetting will clear the text buffer to null and make it clean, so this problem will not occur, but it is still very unsightly, so we will fix it.\r\nSpecifically, at the beginning of String_ExpandNames, we clear about 0x100 bytes (256 bytes) of working memory to zero using memset.\r\nThen copy the data using CopyString.\r\nThis will allow FE8J's buggy String_ExpandNames to work properly.\r\nPlease use this when you want to output 1-byte characters, such as when translating into English.
+NAME.zh=修复了在显示长篇英文翻译后按下状态屏幕上的 R 按钮时导致游戏崩溃的错误。
+INFO.zh=修复了 FE8J 中的 0800A004 String_ExpandNames 函数问题。\r\nFE8J 被编程为假定除转义序列之外的所有内容都是 2 个字节。\r\n因此，它与显示单字节字符的补丁不兼容。\r\n另一个问题是文本缓冲区的后半部分被重用为工作内存的奇怪结构。\r\n\r\n因此，在观看长文本对话后，如果打开状态屏幕并按下 R 按钮，游戏将会冻结。\r\n这是由于上述特点造成的。\r\n重置会将文本缓冲区清除为空并使其干净，因此不会出现此问题，但它仍然非常难看，因此我们将修复它。\r\n具体来说，在 String_ExpandNames 的开头，我们使用 memset 将大约 0x100 字节（256 字节）的工作内存清除为零。\r\n然后使用CopyString复制数据。\r\n这将允许 FE8J 有缺陷的 String_ExpandNames 正常工作。\r\n当您想要输出单字节字符时请使用此项，例如翻译成英语时。

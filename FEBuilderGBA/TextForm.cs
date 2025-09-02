@@ -3546,17 +3546,19 @@ namespace FEBuilderGBA
             //テキストを変更すると、スクロールしてしまうので、一時的にウィンドウを無効にして固める
             editor.LockWindowUpdate();
             editor.SelectedText = insertString; //更新
-            editor.UnLockWindowUpdate();
 
             //変更したテキストの末尾へ
             editor.SelectionLength = 0;
             editor.SelectionStart += insertString.Length;
+            editor.UnLockWindowUpdate();
+
+            //キーワードハイライトをもう一回行う.
+            KeywordHighLight(editor);
+
 
             //変更ボタンを光らせる.
             InputFormRef.WriteButtonToYellow(this.UpdateButton, true);
             InputFormRef.WriteButtonToYellow(this.NewButton, true);
-            //キーワードハイライトをもう一回行う.
-            KeywordHighLight(editor);
         }
         void OnPasteOrUndoOrCutText(Object sender, EventArgs e)
         {

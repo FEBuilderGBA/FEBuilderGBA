@@ -1,0 +1,17 @@
+NAME=クリアターン数一覧に表示できる章タイトルを少し広げる
+INFO=エンディングのクリアターン一覧に表示する章タイトルの制限を少しだけ広げます。\r\n英訳した時に章タイトルが長くなってしまう時に利用してください。2タイルぐらい広がると思う。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 0x9|OFF|Fix: 0xD|FIX
+
+DETERMINATION_ADDRESS=0x0BC23E
+
+OFF:0xBC23E=0x09
+FIX:0xBC23E=0x0D
+NAME.en=Slightly expand the number of chapter titles that can be displayed in the clear turn count list.
+INFO.en=We will slightly expand the limit on chapter titles that are displayed in the ending clear turn list.\r\nPlease use this when the chapter title becomes too long when translated into English.I think it's about 2 tiles wide.
+NAME.zh=稍微扩大了清晰回合数列表中可显示的章节标题数量。
+INFO.zh=稍微扩大结局通关回合列表中显示的章节标题的限制。\r\n当章节标题翻译成英文后变得太长时，请使用此功能。我认为它大约有两块瓷砖宽。

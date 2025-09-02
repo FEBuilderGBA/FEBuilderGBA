@@ -13120,6 +13120,9 @@ Example:\r\nIn ch1, if you attack Breguet with Eirika, it will freeze.\r\nTo rep
 :無改造 FE7J
 未经修改的FE7J
 
+:追加でフォントを取り出すROMがあれば指定してください。ないなら空白にして。
+如果您有其他 ROM 需要提取字体，请指定它们。如果没有，请留空。
+
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 我将翻译ROM。\r\n使用日语ROM和英语ROM自动转换未更改的文本。\r\n\r\n在简化模式下，它会完全自动翻译。\r\n它会自动调整丢失的字体导入，菜单长度等。\r\n请等一会儿，因为完成所有处理大约需要10分钟。
 
@@ -13161,6 +13164,9 @@ Example:\r\nIn ch1, if you attack Breguet with Eirika, it will freeze.\r\nTo rep
 
 :すべてのテキストを、指定されたファイルの内容で書き換えます。\r\n利用するには、anti-HuffmanとDrawMultibye/DrawSingleByteパッチが必要です。\r\n処理が終わったら、別途、足りないフォントを取り込んでください。
 用指定文件的内容重写所有文本。\r\n要使用它，反Huffman和DrawMultibye / DrawSingleByte补丁是必要的。\r\n处理完毕后，请分别捕捉丢失的字体。
+
+:追加フォント ROM
+附加字体 ROM。
 
 :履歴(上が最新)
 历史（Top是最新的）

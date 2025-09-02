@@ -228,9 +228,9 @@ namespace FEBuilderGBA
             try
             {
                 this.Enabled = true;
-                this.Focus();
                 this.SelectionStart = this.WhenLockSelected;
                 this.SelectionLength = 0;
+                this.Focus();
                 U.LockWindowUpdate(IntPtr.Zero);
             }
             catch (ObjectDisposedException)
