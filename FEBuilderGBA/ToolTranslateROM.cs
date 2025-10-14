@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace FEBuilderGBA
 {
@@ -22,6 +22,7 @@ namespace FEBuilderGBA
         uint MaxTextCount;
         uint TextBaseAddress;
         bool UseGoolgeTranslate;
+        bool AppedAIHint = false;
         FETextDecode TextDecode = new FETextDecode();
         uint TextID0Addr;
         RecycleAddress Recycle = new RecycleAddress();
@@ -31,6 +32,10 @@ namespace FEBuilderGBA
             this.Recycle.BlackOut(undodata);
         }
 
+        public void SetAppedAIHint(bool r)
+        {
+            AppedAIHint = r;
+        }
         void AddRecycle(uint id, List<Address> list)
         {
             //無効なID
@@ -254,7 +259,7 @@ namespace FEBuilderGBA
             ToolTranslateROMWipeJPChapterName jpChapter = new ToolTranslateROMWipeJPChapterName(undodata);
             jpChapter.Wipe(list);
 
-            //Address.AddAddress(list, 0x1689450, 379328, U.NOT_FOUND, "",Address.DataTypeEnum.FFor00);//kaitou
+            //Address.AddAddress(list, 0x16892AC, 379328, U.NOT_FOUND, "",Address.DataTypeEnum.FFor00);//kaitou
             this.Recycle.AddRecycle(list);
             this.Recycle.RecycleOptimize();
         }
@@ -452,14 +457,70 @@ namespace FEBuilderGBA
                 return;
             }
 
+            if (AppedAIHint)
+            {//AI用のヒントを追加
+                string aihint = AppendAIHintMessage(translatetext);
+                writer.Write(aihint);
+            }
+
             writer.Write("[" + U.ToHexString(id) + "]\r\n");
             writer.Write(translatetext + "\r\n");
         }
 
+        //AIをヒントを追加
+        string AppendAIHintMessage(string src)
+        {
+            MatchCollection m;
+            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            {
+                m = RegexCache.Matches(src, "\\[LoadFace\\]\\[0x([0-9A-F]...?)\\]");
+            }
+            else
+            {
+                m = RegexCache.Matches(src, "@0010@([0-9A-F]...)]");
+            }
+
+            if (m.Count <= 0)
+            {//顔画像のロードがない
+                return "";
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("");
+            sb.AppendLine("");
+            List<uint> dup = new List<uint>();
+            for (int i = 0; i < m.Count; i++)
+            {
+                uint faceID = U.atoh(m[i].Groups[1].ToString());
+                if (faceID < 0x100)
+                {//必ず100以上である必要がある
+                    continue;
+                }
+                faceID = faceID - 0x100;
+                if (dup.IndexOf(faceID) >= 0)
+                {
+                    continue;
+                }
+                dup.Add(faceID);
+                string r = UnitForm.GetTranslateInfoByFaceID(faceID);
+                if (r == "")
+                {
+                    continue;
+                }
+                sb.AppendLine(r);
+            }
+            if (dup.Count <= 0)
+            {
+                return "";
+            }
+            return sb.ToString();
+        }
+
         Dictionary<int, bool> ExportFilterArray = null;
+        uint ExportFIlter = 0;
         public void InitExportFilter(uint filter)
         {
             List<UseValsID> list = new List<UseValsID>();
+            ExportFIlter = filter;
             if (filter == 1)
             {//ユニット関係のみ
                 UnitForm.MakeVarsIDArray(list);
@@ -498,6 +559,56 @@ namespace FEBuilderGBA
                 {
                     SkillConfigSkillSystemForm.MakeVarsIDArray(list);
                 }
+            }
+            else if (filter == 7)
+            {//交戦セリフ
+                if (Program.ROM.RomInfo.version == 6)
+                {
+                    EventBattleTalkFE6Form.MakeVarsIDArray(list);
+                }
+                else if (Program.ROM.RomInfo.version == 7)
+                {
+                    EventBattleTalkFE7Form.MakeVarsIDArray(list);
+                }
+                else
+                {
+                    EventBattleTalkForm.MakeVarsIDArray(list);
+                }
+            }
+            else if (filter == 8)
+            {//死亡セリフ
+                if (Program.ROM.RomInfo.version == 6)
+                {
+                    EventHaikuFE6Form.MakeVarsIDArray(list);
+                }
+                else if (Program.ROM.RomInfo.version == 7)
+                {
+                    EventHaikuFE7Form.MakeVarsIDArray(list);
+                }
+                else
+                {
+                    EventHaikuForm.MakeVarsIDArray(list);
+                }
+            }
+            else if (filter == 9)
+            {//ED関係
+                if (Program.ROM.RomInfo.version == 6)
+                {
+                    EDSensekiCommentForm.MakeVarsIDArray(list);
+                    EDFE6Form.MakeVarsIDArray(list);
+                }
+                else if (Program.ROM.RomInfo.version == 7)
+                {
+                    EDFE7Form.MakeVarsIDArray(list);
+                }
+                else
+                {
+                    EDForm.MakeVarsIDArray(list);
+                }
+            }
+            else if (filter == 10)
+            {//章内テキスト
+                EventCondForm.MakeVarsIDArray(list);
             }
             else
             {//all

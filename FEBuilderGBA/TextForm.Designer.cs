@@ -63,12 +63,12 @@
             this.ERROR_SERIFU = new System.Windows.Forms.Label();
             this.TextListSpSerifuTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.TextListSpShowPage = new System.Windows.Forms.TabPage();
-            this.TextListSpShowCharText = new FEBuilderGBA.TextBoxEx();
             this.TextListSpShowCharNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.TextListSpShowCharPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.TextListSpShowCharLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TextListSpShowPosComboBox = new System.Windows.Forms.ComboBox();
+            this.TextListSpShowCharText = new FEBuilderGBA.TextBoxEx();
+            this.TextListSpShowCharPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.TextListSpHidePage = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.TextListSpHidePosComboBox = new System.Windows.Forms.ComboBox();
@@ -114,6 +114,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.labelEx1 = new FEBuilderGBA.LabelEx();
             this.RefListBox = new FEBuilderGBA.ListBoxEx();
+            this.X_ExportFilterAIHint = new System.Windows.Forms.CheckBox();
             this.AddressPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -553,29 +554,18 @@
             // TextListSpShowPage
             // 
             this.TextListSpShowPage.BackColor = System.Drawing.SystemColors.Control;
-            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharText);
             this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharNumericUpDown);
-            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharPictureBox);
             this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharLabel);
             this.TextListSpShowPage.Controls.Add(this.label5);
             this.TextListSpShowPage.Controls.Add(this.TextListSpShowPosComboBox);
+            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharText);
+            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharPictureBox);
             this.TextListSpShowPage.Location = new System.Drawing.Point(4, 28);
             this.TextListSpShowPage.Margin = new System.Windows.Forms.Padding(2);
             this.TextListSpShowPage.Name = "TextListSpShowPage";
             this.TextListSpShowPage.Size = new System.Drawing.Size(788, 464);
             this.TextListSpShowPage.TabIndex = 5;
             this.TextListSpShowPage.Text = "キャラ登場";
-            // 
-            // TextListSpShowCharText
-            // 
-            this.TextListSpShowCharText.ErrorMessage = "";
-            this.TextListSpShowCharText.Location = new System.Drawing.Point(255, 64);
-            this.TextListSpShowCharText.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TextListSpShowCharText.Name = "TextListSpShowCharText";
-            this.TextListSpShowCharText.Placeholder = "";
-            this.TextListSpShowCharText.ReadOnly = true;
-            this.TextListSpShowCharText.Size = new System.Drawing.Size(238, 25);
-            this.TextListSpShowCharText.TabIndex = 54;
             // 
             // TextListSpShowCharNumericUpDown
             // 
@@ -590,18 +580,6 @@
             this.TextListSpShowCharNumericUpDown.Size = new System.Drawing.Size(108, 25);
             this.TextListSpShowCharNumericUpDown.TabIndex = 40;
             this.TextListSpShowCharNumericUpDown.ValueChanged += new System.EventHandler(this.TextListSpShowCharNumericUpDown_ValueChanged);
-            // 
-            // TextListSpShowCharPictureBox
-            // 
-            this.TextListSpShowCharPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TextListSpShowCharPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TextListSpShowCharPictureBox.Location = new System.Drawing.Point(500, 18);
-            this.TextListSpShowCharPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.TextListSpShowCharPictureBox.Name = "TextListSpShowCharPictureBox";
-            this.TextListSpShowCharPictureBox.Size = new System.Drawing.Size(138, 121);
-            this.TextListSpShowCharPictureBox.TabIndex = 39;
-            this.TextListSpShowCharPictureBox.TabStop = false;
-            this.TextListSpShowCharPictureBox.Click += new System.EventHandler(this.TextListSpShowCharPictureBox_Click);
             // 
             // TextListSpShowCharLabel
             // 
@@ -634,6 +612,29 @@
             this.TextListSpShowPosComboBox.Size = new System.Drawing.Size(357, 26);
             this.TextListSpShowPosComboBox.TabIndex = 35;
             this.TextListSpShowPosComboBox.SelectedIndexChanged += new System.EventHandler(this.TextListSpShowPosComboBox_SelectedIndexChanged);
+            // 
+            // TextListSpShowCharText
+            // 
+            this.TextListSpShowCharText.ErrorMessage = "";
+            this.TextListSpShowCharText.Location = new System.Drawing.Point(255, 64);
+            this.TextListSpShowCharText.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TextListSpShowCharText.Name = "TextListSpShowCharText";
+            this.TextListSpShowCharText.Placeholder = "";
+            this.TextListSpShowCharText.ReadOnly = true;
+            this.TextListSpShowCharText.Size = new System.Drawing.Size(238, 25);
+            this.TextListSpShowCharText.TabIndex = 54;
+            // 
+            // TextListSpShowCharPictureBox
+            // 
+            this.TextListSpShowCharPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TextListSpShowCharPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TextListSpShowCharPictureBox.Location = new System.Drawing.Point(500, 18);
+            this.TextListSpShowCharPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.TextListSpShowCharPictureBox.Name = "TextListSpShowCharPictureBox";
+            this.TextListSpShowCharPictureBox.Size = new System.Drawing.Size(138, 121);
+            this.TextListSpShowCharPictureBox.TabIndex = 39;
+            this.TextListSpShowCharPictureBox.TabStop = false;
+            this.TextListSpShowCharPictureBox.Click += new System.EventHandler(this.TextListSpShowCharPictureBox_Click);
             // 
             // TextListSpHidePage
             // 
@@ -932,6 +933,7 @@
             // ImportPage
             // 
             this.ImportPage.BackColor = System.Drawing.SystemColors.Control;
+            this.ImportPage.Controls.Add(this.X_ExportFilterAIHint);
             this.ImportPage.Controls.Add(this.X_ExportFilterCombo);
             this.ImportPage.Controls.Add(this.label6);
             this.ImportPage.Controls.Add(this.textBox1);
@@ -954,7 +956,11 @@
             "3=アイテムだけエクスポートする",
             "4=サウンドルームだけエクスポートする",
             "5=支援会話だけエクスポートする",
-            "6=スキル関係だけエクスポートする"});
+            "6=スキル関係だけエクスポートする",
+            "7=戦闘会話だけエクスポートする",
+            "8=死亡セリフだけエクスポートする",
+            "9=ED関係だけエクスポートする",
+            "10=章内テキストだけエクスポートする"});
             this.X_ExportFilterCombo.Location = new System.Drawing.Point(480, 306);
             this.X_ExportFilterCombo.Name = "X_ExportFilterCombo";
             this.X_ExportFilterCombo.Size = new System.Drawing.Size(310, 26);
@@ -1174,6 +1180,16 @@
             this.RefListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RefListBox_KeyDown);
             this.RefListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RefListBox_MouseDoubleClick);
             // 
+            // X_ExportFilterAIHint
+            // 
+            this.X_ExportFilterAIHint.AutoSize = true;
+            this.X_ExportFilterAIHint.Location = new System.Drawing.Point(534, 372);
+            this.X_ExportFilterAIHint.Name = "X_ExportFilterAIHint";
+            this.X_ExportFilterAIHint.Size = new System.Drawing.Size(256, 22);
+            this.X_ExportFilterAIHint.TabIndex = 13;
+            this.X_ExportFilterAIHint.Text = "AI用に登場人物のヒントを追加";
+            this.X_ExportFilterAIHint.UseVisualStyleBackColor = true;
+            // 
             // TextForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1319,5 +1335,6 @@
         private TextBoxEx TextListSpShowCharText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox X_ExportFilterCombo;
+        private System.Windows.Forms.CheckBox X_ExportFilterAIHint;
     }
 }

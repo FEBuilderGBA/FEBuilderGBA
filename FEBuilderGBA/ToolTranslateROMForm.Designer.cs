@@ -32,6 +32,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ExtraFontToROMFilename = new FEBuilderGBA.TextBoxEx();
+            this.ExtraFontToROMFilenameSelectButton = new System.Windows.Forms.Button();
             this.SIMPLE_OVERRAIDE_JPFONT = new System.Windows.Forms.CheckBox();
             this.SimpleTranslateToTranslateDataFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateToTranslateDataFilenameButton = new System.Windows.Forms.Button();
@@ -76,9 +79,6 @@
             this.X_OVERRAIDE_JPFONT = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ImportAllTextButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ExtraFontToROMFilename = new FEBuilderGBA.TextBoxEx();
-            this.ExtraFontToROMFilenameSelectButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -143,6 +143,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(894, 268);
             this.panel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AccessibleDescription = "@TRANSLATE_FONT_ROM";
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Location = new System.Drawing.Point(6, 82);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 31);
+            this.label3.TabIndex = 105;
+            this.label3.Text = "追加フォント ROM";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ExtraFontToROMFilename
+            // 
+            this.ExtraFontToROMFilename.ErrorMessage = "";
+            this.ExtraFontToROMFilename.Location = new System.Drawing.Point(205, 84);
+            this.ExtraFontToROMFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.ExtraFontToROMFilename.Name = "ExtraFontToROMFilename";
+            this.ExtraFontToROMFilename.Placeholder = "";
+            this.ExtraFontToROMFilename.Size = new System.Drawing.Size(623, 25);
+            this.ExtraFontToROMFilename.TabIndex = 103;
+            this.ExtraFontToROMFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ExtraFontToROMFilenameSelectButton_Click);
+            // 
+            // ExtraFontToROMFilenameSelectButton
+            // 
+            this.ExtraFontToROMFilenameSelectButton.Location = new System.Drawing.Point(834, 79);
+            this.ExtraFontToROMFilenameSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ExtraFontToROMFilenameSelectButton.Name = "ExtraFontToROMFilenameSelectButton";
+            this.ExtraFontToROMFilenameSelectButton.Size = new System.Drawing.Size(41, 31);
+            this.ExtraFontToROMFilenameSelectButton.TabIndex = 104;
+            this.ExtraFontToROMFilenameSelectButton.Text = "..";
+            this.ExtraFontToROMFilenameSelectButton.UseVisualStyleBackColor = true;
+            this.ExtraFontToROMFilenameSelectButton.Click += new System.EventHandler(this.ExtraFontToROMFilenameSelectButton_Click);
             // 
             // SIMPLE_OVERRAIDE_JPFONT
             // 
@@ -664,40 +698,6 @@
             this.ImportAllTextButton.Text = "全テキストの読込";
             this.ImportAllTextButton.UseVisualStyleBackColor = true;
             this.ImportAllTextButton.Click += new System.EventHandler(this.ImportAllTextButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AccessibleDescription = "@TRANSLATE_TO_ROM";
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(6, 82);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 31);
-            this.label3.TabIndex = 105;
-            this.label3.Text = "追加フォント ROM";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ExtraFontToROMFilename
-            // 
-            this.ExtraFontToROMFilename.ErrorMessage = "";
-            this.ExtraFontToROMFilename.Location = new System.Drawing.Point(205, 84);
-            this.ExtraFontToROMFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.ExtraFontToROMFilename.Name = "ExtraFontToROMFilename";
-            this.ExtraFontToROMFilename.Placeholder = "";
-            this.ExtraFontToROMFilename.Size = new System.Drawing.Size(623, 25);
-            this.ExtraFontToROMFilename.TabIndex = 103;
-            this.ExtraFontToROMFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ExtraFontToROMFilenameSelectButton_Click);
-            // 
-            // ExtraFontToROMFilenameSelectButton
-            // 
-            this.ExtraFontToROMFilenameSelectButton.Location = new System.Drawing.Point(834, 79);
-            this.ExtraFontToROMFilenameSelectButton.Margin = new System.Windows.Forms.Padding(4);
-            this.ExtraFontToROMFilenameSelectButton.Name = "ExtraFontToROMFilenameSelectButton";
-            this.ExtraFontToROMFilenameSelectButton.Size = new System.Drawing.Size(41, 31);
-            this.ExtraFontToROMFilenameSelectButton.TabIndex = 104;
-            this.ExtraFontToROMFilenameSelectButton.Text = "..";
-            this.ExtraFontToROMFilenameSelectButton.UseVisualStyleBackColor = true;
-            this.ExtraFontToROMFilenameSelectButton.Click += new System.EventHandler(this.ExtraFontToROMFilenameSelectButton_Click);
             // 
             // ToolTranslateROMForm
             // 

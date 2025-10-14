@@ -4,6 +4,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace FEBuilderGBA
 {
@@ -56,7 +57,7 @@ namespace FEBuilderGBA
                 uint src_crc32 = U.u32(patch, (uint)(patch.Length - 12));
                 if (src_calc_crc32 != src_crc32)
                 {
-                    R.ShowStopError("現在開いているROMには適応できません。CRCが一致しません。");
+                    R.ShowStopError("現在開いているROMには適応できません。CRCが一致しません。\r\nこのUPSを開くには{0}が必要です。\r\nあなたが指定したのは{1}です。", markUpSrcROMByCRC32(src_crc32), markUpSrcROMByCRC32(src_calc_crc32));
                     return false;
                 }
             }
@@ -243,6 +244,31 @@ namespace FEBuilderGBA
                     bin[1] == 'P' &&
                     bin[2] == 'S' &&
                     bin[3] == '1';
+        }
+ 
+        static string markUpSrcROMByCRC32(uint src_crc32)
+        {
+            if (src_crc32 == 0xa47246ae)
+            {//FE8U
+                return String.Format("FE8U (CRC32: {0})", U.To0xHexString(src_crc32));
+            }
+            if (src_crc32 == 0x9d76826f)
+            {//FE8J
+                return String.Format("FE8J (CRC32: {0})", U.To0xHexString(src_crc32));
+            }
+            if (src_crc32 == 0x2a524221)
+            {//FE7U
+                return String.Format("FE7U (CRC32: {0})", U.To0xHexString(src_crc32));
+            }
+            if (src_crc32 == 0xf0c10e72)
+            {//FE7J
+                return String.Format("FE7J (CRC32: {0})", U.To0xHexString(src_crc32));
+            }
+            if (src_crc32 == 0xd38763e1)
+            {//FE6
+                return String.Format("FE6 (CRC32: {0})", U.To0xHexString(src_crc32));
+            }
+            return R._("不明なバージョン(CRC32: {0})", U.To0xHexString(src_crc32));
         }
     }
 }

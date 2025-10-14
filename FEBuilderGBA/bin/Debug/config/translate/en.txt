@@ -5572,6 +5572,9 @@ Specify ROM to be used for translation hints.\r\nIt is used to retrieve and comp
 :翻訳のヒントに使うROMを指定します。\r\n無変更のテキストの翻訳文を取り出すために利用します。
 Specify ROM to be used for translation hints.\r\nIt is used to retrieve translated text of unchanged text.
 
+:追加でフォントを取り出すROMを指定します。\r\n存在しない場合は、何も入力しないでも問題ありませんが、\r\n不足フォントは自動生成されるので見栄えが悪くなります。
+Specify the ROM from which to extract additional fonts.\r\nIf it doesn't exist, you don't have to enter anything.\r\nMissing fonts will be auto-generated and will look bad.
+
 :そのゲーム専用の翻訳データがあれば指定してください。\r\n
 Please specify if there is translation data exclusive for that game.\r\n
 
@@ -11935,6 +11938,18 @@ Search
 :6=スキル関係だけエクスポートする
 6=Export Only Skills
 
+:7=戦闘会話だけエクスポートする
+7=Export only battle dialogue.
+
+:8=死亡セリフだけエクスポートする
+8=Export only death lines.
+
+:9=ED関係だけエクスポートする
+9=Export only ED related data.
+
+:10=章内テキストだけエクスポートする
+10=Export only the chapter text.
+
 :エクスポート制限
 Export Limit
 
@@ -12000,6 +12015,9 @@ Where this text is used
 
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
 This string is referenced from the following location.\r\nHowever, there are some references from programs and patches that cannot be detected.
+
+:AI用に登場人物のヒントを追加
+Added character hints for AI.
 
 :参照される場所について説明してください
 Please explain where it is referenced.
@@ -13126,6 +13144,9 @@ If you have additional ROMs to extract fonts from, please specify them.If not, l
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using a Japanese ROM and an English ROM.\r\n\r\nIn Simplified mode, translation is automatic.\r\nIt automatically adjusts the missing font import, menu length, etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
 
+:追加フォント ROM
+Append Font ROM
+
 :日本語フォントを潰して約100kを確保します。\\r\\n翻訳により日本語がすべて消える場合にのみ指定できます。
 Crush the Japanese font to secure about 100k.\\\\ r \\\\ n This can be specified only when all Japanese disappears due to translation.
 
@@ -13164,9 +13185,6 @@ Overwrite All Text
 
 :すべてのテキストを、指定されたファイルの内容で書き換えます。\r\n利用するには、anti-HuffmanとDrawMultibye/DrawSingleByteパッチが必要です。\r\n処理が終わったら、別途、足りないフォントを取り込んでください。
 Rewrite the ROM's text with the contents of the specified file.\r\nThe anti-Huffman and DrawMultibye / DrawSingleByte patches must be applied for it to work.\r\nAny missing fonts must be imported after the text import is complete.
-
-:追加フォント ROM
-Additional font ROM.
 
 :履歴(上が最新)
 History (Descending Date)
@@ -13474,6 +13492,27 @@ Memory slot B Coordinate
 :メモリスロット2 UnitID
 Memory slot 2 UnitID
 
+: 主人公
+ main character.
+
+: 主人公格
+ Main character character.
+
+: 敵将
+Enemy general.
+
+: 女性
+ woman.
+
+: 上級職
+Senior position.
+
+:モブキャラ
+Mob character.
+
+:未参照の人物。兵士か村人のモブキャラだと思われる。
+Unreferenced person.It is thought to be a mob character such as a soldier or villager.
+
 :ユニットデータが極端に少ないです。破損している可能性があります。
 Unit data is extremely small. It may be damaged.
 
@@ -13540,11 +13579,14 @@ UPS file corrupted. Header UPS 1 missing!
 :UPSファイルが壊れています。CRCが一致しません。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
 The UPS file corrupted. CRC does not match.\r\n\r\nThe CRC of the .UPS created by NUPS may be corrupt.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
-:現在開いているROMには適応できません。CRCが一致しません。
-Patch can't be applied to the open ROM. CRC does not match.
+:現在開いているROMには適応できません。CRCが一致しません。\r\nこのUPSを開くには{0}が必要です。\r\nあなたが指定したのは{1}です。
+Patch can't be applied to the open ROM. CRC does not match.\r\nTo open this UPS you need {0}.\r\nYou specified {1}.
 
 :UPSを適応した結果が正しくありません。CRCが不一致です。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
 The result of adapting the UPS is incorrect. CRC does not match.\r\n\r\nThe CRC of the .UPS created by NUPS may be corrupt.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
+
+:不明なバージョン(CRC32: {0})
+Unknown version (CRC32: {0}).
 
 :チェックをつけたメニューを無効にします。
 Disables the checked menu.

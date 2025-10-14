@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-
 using System.Text;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace FEBuilderGBA
 {
@@ -328,6 +327,68 @@ namespace FEBuilderGBA
                 addr += InputFormRef.BlockSize;
             }
             return 0;
+        }
+
+        //顔画像から翻訳に利用するユニットの情報を取得
+        public static String GetTranslateInfoByFaceID(uint face_id)
+        {
+            if (face_id == 0xFFFF - 0x100)
+            {//訪問者自身を置くので不明
+                return "";
+            }
+            string faceID_string;
+            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            {
+                faceID_string = "0x" + (face_id + 0x100).ToString("X03");
+            }
+            else
+            {
+                faceID_string = "@" + (face_id + 0x100).ToString("X04");
+            }
+
+            InputFormRef InputFormRef = Init(null);
+
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++)
+            {
+                if (face_id == Program.ROM.u16(addr + 6))
+                {
+                    uint nameid = Program.ROM.u16(addr);
+                    string name = TextForm.Direct(nameid);
+
+                    uint infoid = Program.ROM.u16(addr + 2);
+                    string info = TextForm.Direct(infoid);
+                    info = info.Replace("\r\n", " ");
+
+                    uint f2 = Program.ROM.u8(addr + 41);
+
+                    if (i == 0)
+                    {
+                        info += R._(" 主人公");
+                    }
+                    else if ((f2 & 0x80) == 0x20)
+                    {
+                        info += R._(" 主人公格");
+                    }
+
+                    if ((f2 & 0x80) == 0x80)
+                    {
+                        info += R._(" 敵将");
+                    }
+                    if ((f2 & 0x40) == 0x40)
+                    {
+                        info += R._(" 女性");
+                    }
+                    if ((f2 & 0x01) == 0x01)
+                    {
+                        info += R._(" 上級職");
+                    }
+
+                    return name + "(" + faceID_string + ")" + " " + info;
+                }
+                addr += InputFormRef.BlockSize;
+            }
+            return R._("モブキャラ") + "(" + faceID_string + ")" + " " + R._("未参照の人物。兵士か村人のモブキャラだと思われる。");
         }
 
         //支援クラスIDからユーザIDに変換 代表的なユーザデータがほしい.

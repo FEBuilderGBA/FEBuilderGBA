@@ -526,8 +526,12 @@ namespace FEBuilderGBA
                 string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.sav", SearchOption.AllDirectories);
                 if (files.Length < 1)
                 {
-                    R.ShowStopError("Base64を復号しましたが、7zファイルからsavを回収できませんでした。");
-                    return;
+                    files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.sa1", SearchOption.AllDirectories);
+                    if (files.Length < 1)
+                    {
+                        R.ShowStopError("Base64を復号しましたが、7zファイルからsavを回収できませんでした。");
+                        return;
+                    }
                 }
                 
                 string targetsavFile = U.GetEmulatorSavFile(".emulator.sav");

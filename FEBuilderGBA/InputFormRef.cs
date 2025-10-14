@@ -12356,6 +12356,10 @@ namespace FEBuilderGBA
             {
                 str = R._("翻訳のヒントに使うROMを指定します。\r\n無変更のテキストの翻訳文を取り出すために利用します。");
             }
+            else if (str == "@TRANSLATE_FONT_ROM")
+            {
+                str = R._("追加でフォントを取り出すROMを指定します。\r\n存在しない場合は、何も入力しないでも問題ありませんが、\r\n不足フォントは自動生成されるので見栄えが悪くなります。");
+            }
             else if (str == "@TRANSLATE_HINT_FILE")
             {
                 str = R._("そのゲーム専用の翻訳データがあれば指定してください。\r\n");
