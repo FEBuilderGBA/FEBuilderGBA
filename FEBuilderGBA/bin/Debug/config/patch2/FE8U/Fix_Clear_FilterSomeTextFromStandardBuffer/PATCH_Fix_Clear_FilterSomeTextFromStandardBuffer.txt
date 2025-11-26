@@ -1,0 +1,16 @@
+NAME=FilterSomeTextFromStandardBufferの2バイト文字対応
+
+INFO=FE8Uの 0800A3B8 FilterSomeTextFromStandardBuffer関数の問題を修正します。\r\nこれは翻訳時に倍角文字を利用する時に利用するパッチです。\r\nFE8Uでは、1バイト文字を処理するようにデザインされているが、0x80の文字が含まれていると、特殊エスケープとして1バイトスキップします。これがテキストの末尾だった場合、文字列終端のnullをスキップし、クラッシュしてしまいます。\r\nSJISカタカナのム(83 80)などにみられる現象です。そのため、まずバッファ全体をmemsetでnullクリアしてから処理するようにします。これにより1バイトスキップしたとしてもnullで止まるので安全になります。
+
+TYPE=EA
+AUTHOR=7743
+
+EA=Fix_Clear_FilterSomeTextFromStandardBuffer_installer.txt
+PATCHED_IF:0x0A3C8=0x00 0x4B 0x18 0x47
+
+
+NAME.en=Fixed support for double-byte characters in FilterSomeTextFromStandardBuffer
+INFO.en=Fixes an issue with the FE8U 0800A3B8 FilterSomeTextFromStandardBuffer function. \r\nThis is a patch used when using double-width characters during translation. \r\nFE8U is designed to process single-byte characters, but if the character 0x80 is included, it skips one byte as a special escape. If this is at the end of the text, it skips the null at the end of the string and crashes. \r\nThis is a phenomenon seen in SJIS Katakana characters such as mu (83 80). Therefore, first clear the entire buffer to null with memset before processing. This makes it safe because even if you skip one byte, it will stop at null.
+
+NAME.zh=Fixed support for double-byte characters in FilterSomeTextFromStandardBuffer
+INFO.zh=Fixes an issue with the FE8U 0800A3B8 FilterSomeTextFromStandardBuffer function. \r\nThis is a patch used when using double-width characters during translation. \r\nFE8U is designed to process single-byte characters, but if the character 0x80 is included, it skips one byte as a special escape. If this is at the end of the text, it skips the null at the end of the string and crashes. \r\nThis is a phenomenon seen in SJIS Katakana characters such as mu (83 80). Therefore, first clear the entire buffer to null with memset before processing. This makes it safe because even if you skip one byte, it will stop at null.

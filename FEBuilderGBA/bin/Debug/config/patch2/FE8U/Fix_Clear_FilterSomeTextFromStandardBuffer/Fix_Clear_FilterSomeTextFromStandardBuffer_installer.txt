@@ -1,0 +1,18 @@
+//FE8Uの 0800A3B8 FilterSomeTextFromStandardBuffer関数の問題を修正します。
+//この関数は 0x80があると1バイトスキップしてしまう。
+//ただ、SJISのムは0x83 0x80 のような末尾に0x80があると、
+//GBAFEは0x80を特殊エスケープシーケンスとして利用する。0x80があると次の命令が制御コードだと思って先読みし、
+//これにより、文字列終端のnullがスキップされて、バッファオーバーランが発生する。
+//
+//この問題を解決するため、memsetで事前にバッファをnullクリアすることで、バッファオーバーランが起きたとしても、ちゃんと停止できるようにします。
+//
+PUSH
+ORG 0x0A3C8
+jumpToHack(Fix_Clear_FilterSomeTextFromStandardBuffer)
+POP
+
+ALIGN 4
+Fix_Clear_FilterSomeTextFromStandardBuffer:
+#incbin "Fix_Clear_FilterSomeTextFromStandardBuffer.dmp"
+
+ALIGN 4
